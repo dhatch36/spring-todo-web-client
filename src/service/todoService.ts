@@ -4,32 +4,41 @@ import Todo from "./Todo";
 const base_url = 'https://dontah06.herokuapp.com/api/todos';
 
 export const getTodos = async () => {
-    try{
+    try {
         let response = await axios.get(base_url);
-        let{data}= await axios.get(base_url);
         console.log("Response", response);
-        console.log("data", response.data);
-        console.log("data", data);
+        console.log("Data", response.data);
         return response.data;
+    } catch (error) {
+        return error;
     }
-    catch(error) {
-            return error;
-    }
-
 };
-
-export const getTodoById = (id: number) => {
-
+export const postTodo = async (todo: Todo) => {
+    try {
+        let response = await axios.post(base_url, todo);
+        console.log("Response", response);
+        console.log("Data", response.data);
+        return response.data;
+    } catch (error) {
+        return error;
+    }
+}
+export const updateTodoById = async (todo: Todo) => {
+    try {
+        let response = await axios.put(`${base_url}/${todo.id}`, todo);
+        console.log("Response", response);
+        console.log("Data", response.data);
+        return response.data;
+    } catch (error) {
+        return error;
+    }
+}
+export const deleteTodoById = async (id: number) => {
+    try {
+        let response = await axios.delete(`${base_url}/${id}`);
+        console.log("Response", response);
+    } catch (error) {
+        return error;
+    }
 }
 
-export const postTodoById = (todo: Todo) => {
-
-}
-
-export const updateTodoById = (todo: Todo) => {
-
-}
-
-export const deleteTodoById = (id: number) => {
-
-}
