@@ -1,0 +1,17 @@
+.button {
+    margin-left: 1em;
+}
+
+.todoBody{
+    text-alighn: center;
+}
+
+.todoRows {
+    text-align: center;
+}
+
+.todoCard {
+    width: 300px;
+    height: 300px;
+    margin: 1em 4em;
+}
