@@ -3,8 +3,9 @@ import TodoItem from "./TodoItem";
 import {Row, Space} from "antd";
 import {getTodos} from "../service/todoService";
 import Todo from "../service/Todo";
-import TodoForm from "./ToDoForm";
+
 import styles from './styles.module.css';
+import TodoForm from "./TodoForm";
 
 interface TodoListState {
     todos: Todo[];
