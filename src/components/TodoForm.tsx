@@ -31,7 +31,7 @@ const TodoForm = (props: TodoFormInterface) => {
     return (
         <Form {...layout} form={form} name="control-hooks" onFinish={onFinish}>
             <Form.Item name="title" label="title" rules={[{required: true}]}>
-                <input/>
+                <Input/>
             </Form.Item>
             <Form.Item name="description" label="description" rules={[{required: true}]}>
                 <Input.TextArea/>
