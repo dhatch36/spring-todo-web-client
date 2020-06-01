@@ -11,6 +11,7 @@ class TodoItem extends Component<TodoProp> {
     }
     render() {
         return (
+
             <Space direction={"vertical"}>
                 <Card title={this.props.todo.title}>
                     <p>Description:</p>
