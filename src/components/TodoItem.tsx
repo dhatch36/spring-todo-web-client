@@ -42,8 +42,8 @@ class TodoItem extends Component<TodoProp, TodoState> {
     deleteTodo = () => {
         if (this.props.todo.id != null && this.props.todo.complete) {
             deleteTodoById(this.props.todo.id).then (() => this.props.reload());
-        } else {
-            this.showModal();
+        }else {
+            this.setState({modalVisible: true})
         }
     }
 
@@ -56,16 +56,16 @@ class TodoItem extends Component<TodoProp, TodoState> {
                     <p>Description:</p>
                     <p>{this.props.todo.description}</p>
                     <p>Complete: <Checkbox defaultChecked={this.props.todo.complete} disabled/></p>
-                    <Button type="primary" danger onClick={this.deleteTodo}>
-                        Delete
-                    </Button>
+
+                    <Button type="primary" danger onClick={this.deleteTodo}>Delete</Button>
                     <Modal
                         title="Delete Todo"
                         visible={this.state.modalVisible}
                         onOk={this.handleOk}
                         onCancel={this.handleCancel}
-                     >
+                    >
                         <p className={styles.dangerDeleteTodo}>In order to delete a todo, it MUST be completed!</p>
+
                     </Modal>
                 </Card>
             </Col>
