@@ -57,7 +57,9 @@ class TodoItem extends Component<TodoProp, TodoState> {
                     <p>{this.props.todo.description}</p>
                     <p>Complete: <Checkbox defaultChecked={this.props.todo.complete} disabled/></p>
 
-                    <Button type="primary" danger onClick={this.deleteTodo}>Delete</Button>
+                    <Button type="primary" danger onClick={this.deleteTodo}>
+                        Delete
+                    </Button>
                     <Modal
                         title="Delete Todo"
                         visible={this.state.modalVisible}
