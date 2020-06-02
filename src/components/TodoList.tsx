@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 import TodoItem from "./TodoItem";
-import {Row, Space} from "antd";
+import {Row} from "antd";
+import styles from './styles.module.css';
+import TodoForm from "./TodoForm";
 import {getTodos} from "../service/todoService";
 import Todo from "../service/Todo";
 
-import styles from './styles.module.css';
-import TodoForm from "./TodoForm";
+
 
 interface TodoListState {
     todos: Todo[];
     loading: boolean;
-
 }
 
 class TodoList extends Component<any, TodoListState> {
@@ -21,7 +21,7 @@ class TodoList extends Component<any, TodoListState> {
     async componentDidMount() {
         await this.loadPage();
     }
-        loadPage = async () => {
+    loadPage = async () => {
         let todos = await getTodos()
         this.setState({todos, loading: false});
     }
@@ -37,7 +37,7 @@ class TodoList extends Component<any, TodoListState> {
                         <TodoForm reload={this.loadPage}/>
                         <Row className={styles.todoRows}>
                             {this.state.todos.map((todo: Todo) =>
-                                <TodoItem todo={todo}/>
+                                <TodoItem todo={todo} reload={this.loadPage}/>
                             )}
                         </Row>
                     </>
