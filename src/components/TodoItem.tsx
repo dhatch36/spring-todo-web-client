@@ -20,9 +20,7 @@ class TodoItem extends Component<TodoProp> {
     }
 
     render() {
-        // @ts-ignore
-        // @ts-ignore
-        return (
+         return (
             <Col className="gutter-ro" span={6} >
                 <Card title={this.props.todo.title} className={styles.todoCard}>
                     <p>Description:</p>
